@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>I Love You ❤️</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            overflow: hidden;
+            background:
+                radial-gradient(circle at center, #421633 0%, #1b0b22 45%, #07040d 100%);
+            font-family: "Poppins", Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Big background glow */
+
+        body::before {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: #ff3f86;
+            opacity: 0.12;
+            filter: blur(150px);
+            border-radius: 50%;
+        }
+
+        /* Main */
+
+        .content {
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .small-text {
+            color: rgba(255,255,255,0.65);
+            letter-spacing: 6px;
+            font-size: 14px;
+            margin-bottom: 25px;
+            animation: fade 2s ease;
+        }
+
+        .love {
+            font-size: clamp(65px, 12vw, 150px);
+            font-weight: 600;
+            color: white;
+            letter-spacing: 4px;
+            text-shadow:
+                0 0 10px #ff8bb8,
+                0 0 30px #ff4f91,
+                0 0 70px rgba(255,60,130,0.7);
+            animation:
+                appear 2s ease forwards,
+                glow 3s ease-in-out infinite 2s;
+        }
+
+        .heart-main {
+            display: inline-block;
+            color: #ff4f91;
+            animation: heartbeat 1.5s infinite;
+            text-shadow:
+                0 0 15px #ff4f91,
+                0 0 40px #ff4f91;
+        }
+
+        /* Stars */
+
+        .star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 12px white;
+            animation: twinkle 2s infinite ease-in-out;
+        }
+
+        .star:nth-of-type(1) {
+            top: 12%;
+            left: 10%;
+        }
+
+        .star:nth-of-type(2) {
+            top: 25%;
+            left: 85%;
+            animation-delay: .5s;
+        }
+
+        .star:nth-of-type(3) {
+            top: 75%;
+            left: 15%;
+            animation-delay: 1s;
+        }
+
+        .star:nth-of-type(4) {
+            top: 80%;
+            left: 80%;
+            animation-delay: 1.5s;
+        }
+
+        .star:nth-of-type(5) {
+            top: 15%;
+            left: 50%;
+            animation-delay: .7s;
+        }
+
+        .star:nth-of-type(6) {
+            top: 55%;
+            left: 8%;
+            animation-delay: 1.2s;
+        }
+
+        .star:nth-of-type(7) {
+            top: 45%;
+            left: 92%;
+            animation-delay: .3s;
+        }
+
+        .star:nth-of-type(8) {
+            top: 90%;
+            left: 50%;
+            animation-delay: 1.8s;
+        }
+
+        /* Floating hearts */
+
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            color: #ff5c9a;
+            font-size: 25px;
+            filter: drop-shadow(0 0 10px #ff4f91);
+            opacity: 0;
+            animation: float 9s linear infinite;
+        }
+
+        .heart:nth-of-type(9) {
+            left: 15%;
+            animation-delay: 1s;
+        }
+
+        .heart:nth-of-type(10) {
+            left: 35%;
+            animation-delay: 4s;
+        }
+
+        .heart:nth-of-type(11) {
+            left: 60%;
+            animation-delay: 2s;
+        }
+
+        .heart:nth-of-type(12) {
+            left: 80%;
+            animation-delay: 5s;
+        }
+
+        @keyframes appear {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+                filter: blur(15px);
+            }
+
+            70% {
+                opacity: 1;
+                transform: scale(1.08);
+                filter: blur(0);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow:
+                    0 0 10px #ff8bb8,
+                    0 0 30px #ff4f91,
+                    0 0 70px rgba(255,60,130,0.7);
+            }
+
+            50% {
+                text-shadow:
+                    0 0 20px #fff,
+                    0 0 45px #ff4f91,
+                    0 0 100px #ff2f75;
+            }
+        }
+
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.25);
+            }
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: .2;
+                transform: scale(.5);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(2);
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0);
+                opacity: 0;
+            }
+
+            15% {
+                opacity: .8;
+            }
+
+            100% {
+                transform: translateY(-120vh) rotate(25deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes fade {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Stars -->
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+    <span class="star"></span>
+
+    <!-- Hearts -->
+    <span class="heart">❤</span>
+    <span class="heart">♡</span>
+    <span class="heart">❤</span>
+    <span class="heart">♡</span>
+
+    <div class="content">
+
+        <div class="small-text">
+            FROM MY HEART
+        </div>
+
+        <div class="love">
+            I Love You <span class="heart-main">♥</span>
+        </div>
+
+    </div>
+
+</body>
+</html>
